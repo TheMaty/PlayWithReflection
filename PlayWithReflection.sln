@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayWithReflection", "PlayWithReflection.csproj", "{F4038B09-785F-4244-B3E3-69C2CC86EA3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicsForReflectionScenarios", "..\MathematicsForReflectionScenarios\MathematicsForReflectionScenarios.csproj", "{3EEAE54E-ABF0-493C-B076-74F782540034}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicsForReflectionScenarios", "MathematicsForReflectionScenarios\MathematicsForReflectionScenarios.csproj", "{3EEAE54E-ABF0-493C-B076-74F782540034}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
