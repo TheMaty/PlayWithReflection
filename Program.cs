@@ -12,6 +12,7 @@ namespace PlayWithReflection
     {
         static void Main(string[] args)
         {
+            // Load the library from file
             Assembly assembly = Assembly.LoadFrom("MathematicsForReflectionScenarios.dll");
             MethodInfo methodInfo = null;
             object result = null;
@@ -21,27 +22,39 @@ namespace PlayWithReflection
             Type type = assembly.GetType("MathematicsForReflectionScenarios.Rectangle");
             if (type != null)
             {
+                // Create a constructor for the Rectangle class.
+                // Rectangle class already takes two parameters : Height (int) and Width (int) so
+                // create Type[] array for each parameter seperately
                 ConstructorInfo constructor = type.GetConstructor(new Type[] { typeof(int), typeof(int) });
-                object instance = constructor.Invoke(new object[] { 4, 7 });
 
+                // Initate the class with 4 and 7
+                object instance = constructor.Invoke(new object[] { 4, 7 });
                 try
                 {
+                    // sample of a method call without parameter
                     methodInfo = type.GetMethod("Area");
                     result = methodInfo.Invoke(instance, null);
+                    // Write the result to the output channel
                     Console.WriteLine("Area Method = " + result.ToString());
 
+                    // sample of a method call without parameter
                     methodInfo = type.GetMethod("Perimeter");
                     result = methodInfo.Invoke(instance, null);
+                    // Write the result to the output channel
                     Console.WriteLine("Perimeter Method = " + result.ToString());
 
+                    // sample of a method call with parameter
                     object[] parametersArray = new object[] { 3, 8 };
                     methodInfo = type.GetMethod("customArea");
                     result = methodInfo.Invoke(instance, parametersArray);
+                    // Write the result to the output channel
                     Console.WriteLine("customArea Method = " + result.ToString());
 
+                    // sample of a method call with parameter
                     parametersArray = new object[] { 3, 8 };
                     methodInfo = type.GetMethod("customPerimeter");
                     result = methodInfo.Invoke(instance, parametersArray);
+                    // Write the result to the output channel
                     Console.WriteLine("customPerimeter Method = " + result.ToString());
                 }
                 catch (Exception ex)
